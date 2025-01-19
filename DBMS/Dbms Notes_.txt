@@ -1,0 +1,549 @@
+Dbms Notes 
+
+Wednesday, January 10, 2024
+9:09 PM
+
+Database management
+1. Ek computer system hai Jo data ko organise aur store karta hai
+2. Isme data ko access aur update karte Hain
+3. basically dbms ek software h jo server aur client k beech me hota h
+4. Database management types - local contractor, large corporation, hierarchical database, network database, oop, rdbms
+Advantages :
+1. Data safety - database system data ko secure rakhta h aur unauthorised access se bachata hai
+2. Data organisation - data ko systematic Tarike se store karte h
+3. Data sharing - multiple users ko data share karna asan hota h
+4. Data consistency - data integrity aur accurate ko maintain rakhta hai
+5. Data retrieval - data ko jaldi retrieve kar sakte h
+6. Data backup - data me problem aati h to data ka backup liya ja sakta h
+7. Reduce redundancy - ek data ki multiple copies ko reduce karta h
+
+Disadvantages :
+1. Cost - DBMS implement karne me kharcha jyaada aata h
+2. Complexity - system ko use karna complicated hota hai
+3. Maintanence - database ko regular update or check karte padta h
+4. Data security - security strong nhi ki to data breaches ho sakti h
+5. Data recovery - agar system fail ho jata hai to system ko recover karna mushkil hota h
+
+File organisation
+1. Data ko file mein systematic tarike se rakhte Hain
+2. Data ko files mein kaise arrange karte Hain
+3. Data ko Access karna aasan hota hai
+4. Data ki Security rahti hai
+5. Dusre ko share karna aasan hota hai
+Features :
+1. Security - protect data from unauthorised access
+2. Back-up - create backup easily and protect data in case of disaster 
+3. Update - data update karna aasan hai usi data me
+4. Sharing - dusre persons ko data share karna aasan hai
+5. Efficiency - files ko asani se find kar sakte hai or time bachca sakte hai
+6. sorting - isme data ko sorted sequence me rakha jata hai
+7. reduce data loss - data loss or misuse ka risk Kam hota h
+
+Inverted file organisation
+1. Information ko retrieve karta hai aur documents ko search karne k liye efficient h ek powerfull data Structure hai
+2. That contain a particular word or phrase
+3. They can be used to support wide variety of search queries 
+
+File system 
+1. data sequence me store hota hai 
+2. data organise tarike se store hota hai
+3. data access slow aur inefficient hota h
+4. data integrity ko implement karna difficult hota hai
+5. isme scalability limited hoti hai
+6. data secuarity implement karna difficult h
+7. iski cost kam hoti hai comparison to dbms
+Ex: file system school me use Kiya jata h jese attendance register
+
+Database system
+1. data central repositery me store hota h
+2. data dbms me store hota h jo ki ek software h
+3. data access fast aur efficent hota h
+4. data integrity ko maintain karna assan h
+5. scalability more flexible hoti h
+6. data secuarity implement karna asan h
+7. Ye expensive hota hai
+
+Deadlock prevention protocols
+Wait die
+1. Wait die me poorani transaction ko kill kar dete h agar jaroorat ho to
+Wound die
+1.purani transaction new transaction ko damage kar deti h agar jaroorat ho to 
+1. Both are deadlock prevention protocol but not perfect it can still leads to deadlock
+2. Both protocols have their own advantages and disadvantages 
+Prevention
+Resource ordering -Transaction acquire resource in a specific order
+Deadlock detection - deadlock are detected after they have occurred
+Conc.
+1. Both wait die and wound wait are deadlock prevention protocols
+2. they work by preventing deadlocks from occurring in the first place
+
+Integrity Constraints
+1. Database k kuch rules hote h jo batate h kya allow h or kya allow nhi h
+2. Database me data accurate aur complete hota h aadha adhoora na ho
+3. Constraints column per kam karte Hain
+
+1. Domain constraints
+Jo Data integrity constraints k rule or limits ko follow karta h wahi data ek field k andar aate hai
+Ex age k column me sirf int value aani chaiye
+2. Entity constraints
+Isme har ek row ek unique identifier hota h
+Aur har ek row ka unique naam hota h jisse asani se identify karte hai Aur baar baar same data nhi aata h
+Ex primary key not null honi chaiye
+3. Tuple uniqueness constraints
+Jo data tables k design or rules k mutaabik hota hai vo data har ek row me Valid hota h
+Ex 
+4. Key constraints
+Primary key ki sab value unique aur not null honi chahiye 
+aur ye domain or entity constraints ka combination h
+Ex Primary key unique honi chaiye 
+5. Referential constraints
+Isme duplicate data ko remove karte h
+Isme foreign key ka concept use hota hai
+Jis format me data set Kara h usi format me data store hota h 
+
+Key Constraints
+Key Constraints database ki kuchh rules hote Hain Jo batate hain kya alav hai aur kya nahin hai aur data ko identify karta hai
+	• Primarykey
+	• Foreignkey
+	• Unique
+	• Not null
+	• Check
+	• Default
+
+Indexes
+1. Data Structure technique hai
+2. Index ek chhoti table hoti hai jisme 2 column ho sakte hai
+3. database me index book k index se similar hota h
+4. types - clustered index, non clustered index
+
+primary index
+1. ye index table k first coloumn par based hoti h
+2. or table ko organise karti h
+3. ek table ki sirf ek primary index hoti h
+
+secondary index
+1. ye index table k second column par based hoti h
+2. data ko fast access karne me help karti h
+3. ek table me multiple seconday index ho sakte h
+
+clustering index
+1. ye index data ko physical order me store karti h
+2. jisse data retrieve karne me help milti h
+3. ek table me ek hi clustering index hoti h aur wo primary key par hoti h
+
+wright ahead log
+1. jab database me kuch changes karte hai to sabse phele diary banayi jaati hai jisme saare changes likkhe hote hai 
+2. agar future me problem aati hai to is diary se bakup liya ja sakta hai
+Write ahed logging
+1. Data ko change karne se phele uski recording ki jaati h agar future me kuch problem aati h to use original data ko wapas laya ja sakta h
+2. Ye data ko safe rakhta h
+
+Normalisation 
+1. database ko ek tarike se organise karta hai aur redundancy reduce karta hai
+2. large table ko multiple table me divide karte hai aur unke beech me relation ko establish karte hai
+Data integrity
+Refer to the accuracy and consistency of data in a database. Normalisation can help to improve data integrity 
+Benefits
+	• 1. Reduce redundancy
+	• 2. Improve data integrity
+	• 3. Makes queries more efficient
+	• 4. Makes the database easier to maintain 
+Redundancy
+1. Same data ki multiple copies same place par store hoti
+2. Relation k andar problem hoti h jisme database table me data ki multiple copies hoti h
+3. Database table me Ise remove karne k liye normalisation ka use karte h
+4. Ye 3 types k hote h
+
+Anomalies
+update anomaly
+1. data update karte h to galti se kisi aur ka data update ho jata h
+2. problem - inconsistent aati h
+insert anomaly
+1. new data insert karte h to kisi aur ka data reh jata h
+2. problem - consistency aati h
+Delete anomaly
+1. data delete karte h to saath me kuch aur data delete ho jata h
+2. problem - integrity aati h
+
+Normalisation types 
+1NF
+1. First normal form
+2. Table me har ek cell sirf ek value contain karta h
+3. Table k andar no multivalued attribute honi chaiye
+4. Har entity or column unique name contain karta h
+5. Simple form of normalisation
+2NF
+1. Second normal form
+2. Iska relational 1nf se hota h
+3. Isme no partial dependency honi chaiye
+4. ex. Isme saare column rollno. Column se fetch hote h
+5. Partial dependency - non prime attribute primary key k ek part par depend hota h
+3NF
+1. Third normal form
+2. Iska relation 2nf se hota h
+3. Isme no transitive dependency honi chahiye
+4. Generally database design on 3nf
+5. Transitive dependency - non prime attribute dusre non prime attribute se Depend hote h
+BCNF
+1. boyee codd normal form
+2. Isme 3nf ka relation hota h
+3. Ye 3nf ka advance version h
+4. LHS of function dependency superkey key ka must part hota h
+5. All determines are superkey 
+6. Ek se jyaada function dependency honi chaiye isme function dependency ka left part aur right part prime attribute hona chaiye 
+
+Index tree data structure / file
+1. Ye ek tree jesa structure hota hai
+2. Isme har node k 2 children hote h Jo data ko organise karte hai
+3. Ye data ko search karta h
+4. Ye data ko fast access karta ha
+5. Ye ek efficient tarika h data ko store aur access karne ka
+
+B-tree
+1. Ye ek Tree jaisa structure hota hai
+2. Isme har node ke 2 children hote H Jo data ko organise karte H 
+3. Ye data ko search karta hai
+4. ye data ko fast access karta hai
+5. Ye largedatasets ko manage karne ke liye fast hai
+
+B* tree is better than index tree ?
+B * tree sequential access me efficient h kyunki iske nodes ek sath linked hote Hai
+
+Transaction
+1. Transaction ek set of operation h Jo data ko change karta hai Jaise insert update delete
+2. Data ko consistant aur safe Rakha jata hai
+3. Transaction is a single unit of work formed by set of operations
+
+Acid properties of transaction
+1. Atomicity - ek transaction complete ya fail hoti h par bich mein break nahi  hoti
+2. Consistency - transaction ke baad data Sahi aur business rules ke according hona chahiye aur update to date data ko use karna chahiye
+3. Isolation - ek transaction dusri transaction ko affect nahin karti har EK transaction Apne raste per chalti hai
+4. Durability - jab transaction complete Ho jaati hai to data permanently store ho jata hai aur kabhi data loss nahin hota
+
+Concurrent transaction
+1. Jab computer mein do ya do se jyada transaction ek sath chalti hai to kabhi kabhi transaction mein conflict a jaati hai Jaise data ka galat istemal ya uljhan isiliye transaction management technic ka istemal karte h
+2. Conflict two transaction me aata h R-W ,W-R , W-W
+
+Concurrent transaction problems :
+1. Dirty reads
+ek transaction data ko modify karte waqt dusri transaction data ko read kar leti hai, Per pheli transaction cancel Ho jaati hai aur dusri transaction dirty data padh leti hai Jo show nahi hota
+2. Lost update
+Do transaction ek saath data ko modify karte Hain to ek transaction ke changes dusri transaction ke changes per override Ho jaate H
+3. Unreadable reads
+Jab ek transaction same data ko do bar read karti h jisse pahli aur dusri transaction mein difference a jata hai
+4. Phantom reads
+Ek transaction k Bich mein ek data set ke sath kuchh Phantom rows ya records unexpected taur per dikhai dene lagte Hain
+
+Alter table
+Table ke structure ko change karta hai jese add new colum, modify old column, Rename column :
+Add new column -
+Alter table tablename Newcolumnname;
+Modify old column -
+Alter Table tablename Modify oldcolumnname [<newdatatype><size>]
+Rename column -
+Alter table change oldcolumnname newcolumnname datatype;
+
+Locking protocol
+1. Locking protocol ek security system h Jo data ko protect karne me help karta h
+2. Jisse sirf ek user ek hi time me data access kar sakta h
+3. A way to control access to share data in a db
+4. 2 types of locks - shared lock, exclusive lock
+Shared lock
+1. Ek tarhe ka lock h jo db me data ko protect karta h
+2. Ye lock multiple transaction ko allow karta h
+3. User same data ko read kar sakta h par write nhi kar sakta
+4. Concurrency control
+Exclusive lock
+1. Ek tarhe ka lock hota h jo db me data ko protect karta h
+2. Ye lock sirf ek hi transaction ko allow karta h
+3. User data ko read aur write dono kar sakta h
+4. Maintain integrity
+
+Log based recovery :
+1. isme database ko check kiya jata h kya problem h or kya nahi aur use kese fix kare
+2. ye two types k hote hai
+
+Backword recovery
+1. Jab database me error aata hai to hum phele Wale stable state me wapas jaate hai aur use fix karte h
+5. Log used - transaction log
+2. Backword recovery is used when database is in inconsistent state after a failure
+3. Database state - inconsistent state
+4. Changes - changes made by uncommitted transaction
+
+Forword recovery
+1. jab database me problem aati h to hum use problem ko solve karke aage bad jaate h or piche nhi jaate h
+5. Log used - Redo log
+2. Forward recovery is used when database is in consistant state but some transaction have not been committed
+3. Database state - consistant
+4. Changes - changes made by committed transaction
+
+
+Recovery techniques
+1. Jab database me crashes or failer ho jate h tab hum database k use point ko restore ya repair karte h
+2. Jisse data loss nhi hota aur system smooth kaam karta h
+1. Backup and restore - 
+database ka regular backup lete h
+jab database me kuch gadbad aati h to to hum use data ka backup le sakte h
+2. Transaction log -
+Har database k transaction ka record rakhte h
+Jab database me kuch problem aati h to Hume pata chal jata h Kya hua h aur use kese recover kar sakte h database k transaction ko dekh k
+3. Rollback - 
+Agar transaction me problem aati hai to hum us complete transaction ko undo karke sahi state me laate h
+4. Checkpoints -
+Thode thode time baad data ka snapshot lete hai
+Agar database me kuch issue aata hai to 
+To hum last Wale  snapshot se data recover kar sakte h
+Shadow pagging, immediate update, differed update, Redo log, undo logs
+
+Checkpoints in recovery mechanism
+1. Checkpoints basically database ka backup point h
+2. Database me checkpoints lagaye jaate h
+3. Thode thode time baade database ka snapshot lete hai
+Agar database me kuch issue aata hai to 
+To hum last Wale snapshot se data recover kar sakte h
+4. Software apni progress ko save karta hai agar kuchh problem aati hai to checkpoints ki help se use progress ko wapas laya ja sakta hai jisse data loss nahin hota
+
+Advantages : 
+1. Data protection
+Agar database me kuch gadbad aati ha to last check point se data bachca sakte h
+2. Time saver
+Jab Database me problem aati h to sabkuch starting se nahi karte balki last checkpoint se us kaam continue rakh sakte h jisse time or mehnat bachti h
+3. Consistency
+Checkpoint ensure karta h aapka data consistant or reliable hona chaiye jese puzzle ka piece perfect fit hona chaiye
+4. Reduce risk
+Checkpoints se valuable information khone ka risk Kam hota hai kyuki ye har time baad data save karta rehta h
+
+De normalisation
+1. Data ka duplicate banaya jata h jisse query performance ko improve karte h
+2. Table me redundant data ko order me add karte h jisse database ki access speed optimise hoti h
+3. Database design ko optimise karne k liye normal forms ko ignore karte h
+4. Lekin isse data storage maintanence ka kaam bad jata h
+  
+Data dictionary
+1. Ek document ya tool hota hai jismein database ka data elements ki definitions aur properties store hoti hai Jo database designer aur developers ke kam aati hai
+2. Data dictionary Is a collection of meta data about data elements in a database or information system
+3. It is valuable tool for understanding and managing data
+4. It help to improve data quality, usability and security
+Types of data Dictionaries
+1. Integrated data dictionary - a. Active Data dictionary
+b. Passive Data dictionary 
+2. Stand alone data dictionary 
+Most common terms of data Dictionaries :
+Meta data
+Data the describe other data
+Data element
+The smallest unit of data in a database or information system
+Example person name, age, and address
+Data types
+That kind of data that can be stored in a data element
+example text, numbers and date
+Data format
+The way in which data is Stored in a data and represented such as a comma sepertad value CSV file in a  data element
+Ex. persons name is stored as a string of characters
+And their age might be stored as a integer
+Data relationship
+The connection between two or more data elements
+Example Person name might be related to their address
+
+DBA
+1. Database ka admin hota h jo database ko manage karta h
+2. Data ko store karta h aur ensure karta h sab kuch thik thaak h ya nhi
+3. DBA dekhta h konsa data kha aana chaiye
+4. Logical level par kaam karta basically DBA ek important job h jisme thoda risk bhi hota h Jo companies k employees ka data handle karta h
+5. Database ki security ka bhi dhyaan rakhta h jisse koi unauthorised access na ho
+
+Entity set
+Entity ek object Jo object k data k baare me batata h
+ ex student, employee, teacher
+Weak entity
+1. Khud ki unique identifier nahin Hoti ye uncomplete Hoti hai ise strong entity ki jarurat hoti hai
+2. An entity that cannot exist independently of other entities
+3. Primary key - does not have its own
+4. Existence - cannot exist independently
+Strong entity
+1. Khud ki unique identifier hoti hai jo complete Hoti ise dusri entity ki jarurat nhi hoti hai
+2. An entity that can exist independently of other entities 
+3. Primary key - has its own primary key
+4. Existence - object exist independently
+
+Data replication
+1. Ek data ki multiple copies banakar alg alg location aur server per store karte Hain jisse agar ek copy destroy ho jati h to dusri copy se backup liya ja sakta h
+2. Data application is the process of storing data in a multiple location and it improve availablity, performance scalability and disaster recovery
+Types
+Full table replication
+Transaction replication
+Snapshot replication
+Merge sort replication
+Advantages
+Increase Availability : Agar ek location se fail ho jata hai to dusri location se access kar sakta hai
+Increase Performance : Data location se jaldi access hota hai That is closer to the user
+Enhanced scalability : 
+Data multiple places per store hota hai jisse increasing processing power or performance badh jata hai
+Disaster recovery : 
+Agar data destroy ho jata hai to use backup copy se restore kar sakte hain
+Disadvantages : 
+Cost : Replication jyada space aur jyada storage require karta hai
+Complexity : Replication ko manage or maintain karna complex hota hai
+Latency
+
+Client server database / 2-tier client /server model
+1. Client server se data mangta hai server database se data lekar client ko dikhata hai
+2. Yah system data ko organise aur secure rakhta hai
+3. Is the type of database architecture where the database is stored on a central server and clients access the database through a network
+4. Example online banking system
+5. Client server database are a good choice for application that need to support large number of users and require high performance and security
+
+Distributed DBMS
+1. Distributed DBMS are typically used for application that requires high scalability, availability, or performance
+2. Data is stored across multiple nodes in a network
+3. More complex to design implement and manage
+4. More expensive
+5. Data storage - multiple nodes
+6. Scalability - horizontal 
+7. Availability - high
+8. Complexity - high
+9. Cost - high
+10. Diagram - databases network se connect hote h
+
+Centralised DBMS
+1. Centralised DBMS are typically used for application that do not require these same level of scalability, availability, or performance 
+2. Data is stored on single nodes
+3. Less complex to design implement and manage
+4. Less expensive
+5. Data storage - single nodes
+6. Scalability - vertical
+7. Availability - low
+8. Complexity - low
+9. Cost - low
+10. Diag - clients database se connect hote h
+
+Query optimisation
+1. Database me query ko jaldi or efficient tarike se execute karte h jisse data retrieval ki speed bad jaati h
+2. Ye database performance ko improve karta h
+3. Query optimisation is the process of choosing the most efficient way to execute given query
+
+Relational algebra
+1. Ek tarika h jisse hum database ko filter or manipulate karte h jisme hum relation k saath operation ka use karte h
+2. Basic operators - selection, projection, crossproduct X, union U, minus -, rename P
+3. A mathematical formalism for expressing queries on relational database
+4. Formal query language - what to do, how to do
+Role of relational algebra in query optimisation -
+1. Jab Database ki queries ko likhte h to relational algebra k concepts ka use karte h
+Queries ko analys karne me
+2. Provide a formal foundation for the optimisation process
+3. Relational algebra is powerful tool that can be used to improve performance of queries by providing a formal foundation for the optimisation process 
+
+Two phase locking
+1. Data ko secure rakhne k liye transaction ko 2 phase me divide karte h
+2. Pehle locks acquire karte h phir release hote h
+Phase commit
+1. Multiple transaction k beech me transaction ka protocol hota h
+2. Pehle voting hoti h phir final commit or abort decision liya jata h, ensure Data consistency 
+
+DBMS
+Dbms ek software h Jo data ko manage aur organise karta h isme data table ki form me nhi hota 
+1. database management system
+2. Data file me store hota h
+3. There is no relationship concept between data
+4. It can not be normalised or less normalised
+5. It has no support for distributed data
+6. Data redundancy is a major problem
+7. DBMS is usually prefer for small datasets
+8. NoSql, mongooDB, roop
+RDBMS
+1. relational database management system
+2. Data tables me store hota h
+3. There is relationship concept between tables
+4. It can be normalised with high efficiency
+5. It has support for distributed database
+6. Data redundancy can be reduce
+7. RDBMS is deals with large datasets
+8. MySQL, postrerSQL, IBM, SQL server, 
+
+key 
+set of attributes used to differentiate table records uniqely : 
+
+Composite key
+1. Ye Do aur do se jyaada attributes ka combination hota h 
+2. Jo record ko identify karne me help karta h
+3. Ye uniqueness ki guarantee nhi leta studentname, age, department
+
+Unique key
+1. Row ko uniquely identify karta h Null value contain karta h
+2. Non null value unique hoti h
+3. Ek table me multiple unique key ho sakti h
+
+Primary key
+1. Primary key unique aur not null hoti hai
+2. A primary key uniquely identifies each row in a table
+3. table mein sirf ek column primary key hota hai ex. roll number, employee ID, serial number, Aadhar number
+
+Foreign key
+1. A foreign key reference the primary key of another table
+2. ek table ki primary key dusri table me relate karte h
+Secondery key
+1. primary key ko chodkar saari candidate key seconday key hoti hai
+2. seconday key ki field value NULL ho sakti hai
+3. ek table or relation me ek se jyaada secondary key ho sakti h
+
+Superkey
+1. Set of multiple attributes used to differentiate table records uniquely one or more
+2. Super key 2 key se milkar bani hoti hai jisme first candidate key hoti hai aur second koi si bhi mil sakti hai
+3. Null value contain kar sakta hai
+
+Candidate key
+1. Minimum set of attributes used to differentiate tables records uniquely
+2. Candidate key Null value contain karta h
+3. Ek table me Ek se jyaada candidate key ho sakti h
+4. Ex contact no., email Id ye do candidate always unique hoti h 
+5. 2 Keys se milkar bani hoti h 1st primary key hoti h aur dusri koi si bhi mil sakti h
+
+1-tier architechture
+1. dbms ka saara kaam ek layer me hota hai
+2. dbms ka saara kaam ek computer ya device par hota h jisme database storage, query processing aur ui sab kuch ek saath hota h bina kisi other layer k
+
+2-tier architecture
+1. dbms ka saara kaam 2 layers me hota h 
+2. first layer - client layer hoti h jiska use user data ko input aur output karne k liye hota h
+3. second layer - server layer hoti h jiska use dbms k data storage, retrieval me hota h
+4. isme client sidha server se connect hota h
+
+Entity type
+1. Data ko category ya type k roop me represent karte hai
+2. Set of attribute in database 
+
+Er diagram
+1. Er diagram or entity relationship diagram is a conceptual model that give graphical representation of the logical structure
+2. It show all the constraints and relationship
+3. Er diagram has mainly 3 components
+Entity
+attributes
+Relationship
+Entity - entity is a set of attribute in a database
+strong entity - an entity that can exist independently of other entities
+weak entity - an entity that cannot exist independently of other entities
+Attribute - jo entity ki properties ko define karta h jese ek person ka naam rollno. define karta h
+key attribure
+1. db me har entity ko uniquely define karta h
+2. jese aadhar no., ek person ko uniquely identify karta h
+composite attribute 
+1. ek attribute ko do ya do se jyaada chote parts me divide karta h
+2. jese address ko street, city, country, state me divide karte h
+multivalued attribute
+1. ek attribute k andar multiple value hoti h
+2. jese person k paas do se jyaada mobile no. hote hai
+derived attribute
+1. jo apni value ko dusre attribute se automatic calculate harta h
+2. jese  age ek derive attribute h jo birthday attriubute me se nikla h
+
+relationship type and set
+do entites se jyada k beech ka relationship represent karta h
+degree of relationship setunary relationshiponly one entity set participate karte hai relationship set mebinary relationship two entity set participate karte h relationship set men-ary relationship no. of entity set participate karte h relationship set meternary relatioinshipthree entity set participate karte h relationship set me
+cardinality1. cardinality is like counting how many things are related in a databaseMtlb ek table me kitne item duri table k kitne item se related h 2. it work efficiently and accurately
+one to one
+one to many
+many to many
+many to one
+
+
+Get Microsoft OneNote: https://aka.ms/GetOneNoteMobile
