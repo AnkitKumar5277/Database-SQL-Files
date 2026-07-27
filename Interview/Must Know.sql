@@ -191,7 +191,7 @@ LIMIT 3;
 |  1 | Rahul |
 |  2 | Ankit |
 |  3 | Priya |
-|  4 | Neha  |
+|  4 | Shivangi  |
 |  5 | Aman  |
 
 -- Orders Table
@@ -209,7 +209,7 @@ WHERE o.customer_id IS NULL;
 | name  |
 | ----- |
 | Ankit |
-| Neha  |
+| Shivangi  |
 
 
 
